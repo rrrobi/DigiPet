@@ -42,12 +42,22 @@ public class CameraControls : MonoBehaviour {
         if (Input.GetKey(KeyCode.DownArrow))
         {
             Debug.Log("down key pressed");
-            transform.Translate(0.0f, -PanSpeed * 2, 0.0f);
+            transform.Translate(-PanSpeed * 2, 0.0f, 0.0f, Space.World);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
             Debug.Log("Up key pressed");
-            transform.Translate(0.0f, PanSpeed * 2, 0.0f);
+            transform.Translate(PanSpeed * 2, 0.0f, 0.0f, Space.World);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            Debug.Log("down key pressed");
+            transform.Translate(0.0f, 0.0f, PanSpeed * 2, Space.World);
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Debug.Log("Up key pressed");
+            transform.Translate(0.0f, 0.0f, -PanSpeed * 2, Space.World);
         }
     }
 }
